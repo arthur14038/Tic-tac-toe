@@ -9,6 +9,8 @@ public class WellView : MonoBehaviour, IWellView
     GridLayoutGroup m_GridLayoutGroup;
     [SerializeField]
     NodeView m_NodeView;
+    [SerializeField]
+    Text m_RoundText;
 
     INodeView[] nodeViews = null;
 
@@ -19,7 +21,7 @@ public class WellView : MonoBehaviour, IWellView
 
     public void SetRound(GameLogic.Round round)
     {
-
+        m_RoundText.text = "Now Round : " + round;
     }
 
     public void SetWell(Well data)
