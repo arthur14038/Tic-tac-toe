@@ -15,6 +15,8 @@ public class MenuView : MonoBehaviour, IMenuView
     Text m_TextWinner;
     [SerializeField]
     Button m_OKButton;
+    [SerializeField]
+    Text m_TextTitle;
 
     IMenuListener mMenuListener = null;
 
@@ -35,6 +37,16 @@ public class MenuView : MonoBehaviour, IMenuView
         m_MenuRoot.gameObject.SetActive(true);
         m_WinnerRoot.gameObject.SetActive(false);
         m_StartButton.gameObject.SetActive(true);
+        m_TextTitle.enabled = true;
+    }
+
+    public void ShowTie()
+    {
+        m_MenuRoot.gameObject.SetActive(true);
+        m_WinnerRoot.gameObject.SetActive(true);
+        m_StartButton.gameObject.SetActive(false);
+        m_TextWinner.text = "Tie";
+        m_TextTitle.enabled = false;
     }
 
     public void ShowWinner(GameLogic.Round round)
@@ -43,5 +55,6 @@ public class MenuView : MonoBehaviour, IMenuView
         m_WinnerRoot.gameObject.SetActive(true);
         m_StartButton.gameObject.SetActive(false);
         m_TextWinner.text = string.Format("{0} is Winner!", round);
+        m_TextTitle.enabled = false;
     }
 }
