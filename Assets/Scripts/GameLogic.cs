@@ -144,7 +144,7 @@ public class GameLogic : MonoBehaviour, IController, INodeListener, IMenuListene
         if (!someoneWin)
         {
             if(mClickedNodeCount == mWellSize*mWellSize)
-                m_MenuView.ShowStartButton();
+                m_MenuView.ShowTie();
             else
                 NextRound();
         }
