@@ -14,5 +14,7 @@ namespace View
         void ShowStartButton();
 
         void ShowWinner(GameLogic.Round round);
+
+        void ShowTie();
     }
 }
