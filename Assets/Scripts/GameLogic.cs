@@ -163,6 +163,7 @@ public class GameLogic : MonoBehaviour, IController, INodeListener, IMenuListene
 
     public void OnClickStart()
     {
+        mCurrentRound = Round.Circle;
         m_MenuView.HideMenu();
         Model.Model.ClearNodesState();
         for (int i = 0; i < mNodesView.Length; ++i)
