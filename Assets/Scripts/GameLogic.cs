@@ -153,6 +153,7 @@ public class GameLogic : MonoBehaviour, IController, INodeListener, IMenuListene
     void NextRound()
     {
         mCurrentRound = mCurrentRound == Round.Circle ? Round.XX : Round.Circle;
+        m_WellView.SetRound(mCurrentRound);
     }
 
     void HaveWinner()
@@ -169,6 +170,7 @@ public class GameLogic : MonoBehaviour, IController, INodeListener, IMenuListene
             mNodesView[i].SetNode(Model.Model.GetNode(i), this);
         }
         mClickedNodeCount = 0;
+        m_WellView.SetRound(mCurrentRound);
     }
 
     public void OnClickOK()
